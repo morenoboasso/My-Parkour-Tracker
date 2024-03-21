@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce22324c-1c29-4039-87e3-3dc5e22767c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/splash_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/routes/routes.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/styles/colors.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/My-Parkour-Tracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/My-Parkour-Tracker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +25,13 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -28,6 +39,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2e0IjRNMr1rUEK6YXTDdrxl2S5j" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,10 +55,16 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
     "settings.editor.selected.configurable": "flutter.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/assets" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
