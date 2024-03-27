@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce22324c-1c29-4039-87e3-3dc5e22767c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/assets/Background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/tutorials.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/widgets/parkour_tutorial_card.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/widgets/search_bar.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/My-Parkour-Tracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/My-Parkour-Tracker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/splash_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/styles/assets_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/assets_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/styles/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/styles/text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/text_style.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +61,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/lib/assets" />
     </key>
   </component>
