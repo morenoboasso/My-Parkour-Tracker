@@ -1,77 +1,90 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:myparkourtracker/styles/text_style.dart';
 
 class ParkourTutorialCard extends StatelessWidget {
   final String id;
   final String title;
   final String category;
+  final String livello;
+  final int durata;
 
   const ParkourTutorialCard({
     super.key,
     required this.id,
     required this.title,
     required this.category,
+    required this.livello,
+    required this.durata,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-    child: ListTile(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5.0),
+      child: Card(
+        child: ListTile(
           title: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Container per l'immagine del movimento
               Container(
-                width: MediaQuery.of(context).size.width / 2, // Metà della larghezza dello schermo
-                height: MediaQuery.of(context).size.height / 6, // Altezza aggiuntiva
-                color: Colors.grey, // Inserisci l'immagine qui
+                width: MediaQuery.of(context).size.width / 2,
+                height: MediaQuery.of(context).size.height / 6,
+                color: Colors.grey,
+                // Inserisci l'immagine qui
               ),
               const SizedBox(width: 10),
               // Container per le informazioni
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 25),
+                  padding: const EdgeInsets.only(top: 20,bottom: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Titolo
                       Center(
-                        child: Text(
+                        child: AutoSizeText(
                           title,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
+                          maxLines: 1,
+                          maxFontSize: 15,
+                          minFontSize: 12,
+                          textAlign: TextAlign.center,
+                          style: TextHD.cardTitle
                         ),
                       ),
-                      SizedBox(height: 10), // Spazio verticale
-                      // Livello del flip
+                      const SizedBox(height: 10),
+                      // Livello
                       Center(
-                        child: Text(
-                          'Livello: ', // Sostituisci con il livello
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black87,
-                          ),
+                        child: AutoSizeText(
+                          livello,
+                          maxLines: 1,
+                            maxFontSize: 13,
+                            minFontSize: 10,
+                          style: TextHD.cardLivello
                         ),
                       ),
-                      SizedBox(height: 10), // Spazio verticale
-                      // Icona della durata
+                      const SizedBox(height: 10),
+                      // Durata del tutorial
                       Center(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.access_time,
-                              size: 16,
+                              size: 14,
                               color: Colors.black87,
                             ),
-                            SizedBox(width: 5),
-                            // Durata del tutorial
-                            Text(
-                              '', // Sostituisci con la durata
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey,
+                            const SizedBox(width: 5),
+                            AutoSizeText(
+                              '$durata min',
+                              maxLines: 1,
+                              maxFontSize: 13,
+                              minFontSize: 10,
+                              style: const TextStyle(
+                                fontSize: 12,
+                                color: Colors.black87,
                               ),
                             ),
                           ],
@@ -81,14 +94,13 @@ class ParkourTutorialCard extends StatelessWidget {
                   ),
                 ),
               ),
-
-
             ],
           ),
           onTap: () {
             // Azioni da eseguire quando si tocca la card
           },
         ),
+      ),
     );
   }
 }
