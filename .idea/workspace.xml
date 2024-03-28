@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce22324c-1c29-4039-87e3-3dc5e22767c9" name="Changes" comment="Add tutorials filter logic and little UI (da migliorare)">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="ce22324c-1c29-4039-87e3-3dc5e22767c9" name="Changes" comment="Upgrade UI + minor changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/tutorials.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/tutorials.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/styles/text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/text_style.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/parkour_tutorial_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/parkour_tutorial_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,11 +84,20 @@
       <option name="project" value="LOCAL" />
       <updated>1711558304914</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Upgrade UI + minor changes">
+      <option name="closed" value="true" />
+      <created>1711619825115</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711619825115</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add tutorials filter logic and little UI (da migliorare)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tutorials filter logic and little UI (da migliorare)" />
+    <MESSAGE value="Upgrade UI + minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgrade UI + minor changes" />
   </component>
 </project>

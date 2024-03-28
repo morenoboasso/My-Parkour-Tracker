@@ -1,5 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myparkourtracker/styles/text_style.dart';
 import '../../data/tutorials.dart';
 import '../../styles/assets_manager.dart';
@@ -16,9 +18,11 @@ class _TutorialHomeState extends State<TutorialHome> {
   int _selectedIndex = -1;
   final List<String> _filters = ['Basics', 'Vaults', 'Flips', 'Tricking'];
   late List<ParkourTutorial> filteredTutorials; // Dichiarare la lista filtrata
-
+  TextEditingController searchController =
+      TextEditingController(); // search bar controller
 
   void _selectFilter(int index) {
+    //metodo filter buttons
     setState(() {
       if (_selectedIndex == index) {
         _selectedIndex = -1; // Deseleziona il filtro se già selezionato
@@ -27,15 +31,32 @@ class _TutorialHomeState extends State<TutorialHome> {
         _selectedIndex = index; // Seleziona il filtro
         final String selectedCategory = _filters[index];
         // Applicare il filtro in base alla categoria selezionata
-        filteredTutorials = tutorials.where((tutorial) => tutorial.category == selectedCategory).toList();
+        filteredTutorials = tutorials
+            .where((tutorial) => tutorial.category == selectedCategory)
+            .toList();
       }
+    });
+  }
+
+  void _searchTutorial(String searchText) {
+    //controllo ricerca
+    setState(() {
+      filteredTutorials = tutorials.where((tutorial) {
+        final String level = tutorial.livello.toLowerCase();
+        final String title = tutorial.title.toLowerCase();
+        final String search = searchText.toLowerCase();
+
+        // Controlla se il titolo o il livello corrispondono al testo di ricerca
+        return title.contains(search) || level.contains(search);
+      }).toList();
     });
   }
 
   @override
   void initState() {
     super.initState();
-    filteredTutorials = tutorials; // Inizializzare la lista filtrata con tutte le cards
+    filteredTutorials =
+        tutorials; // Inizializzare la lista filtrata con tutte le cards
   }
 
   @override
@@ -61,7 +82,7 @@ class _TutorialHomeState extends State<TutorialHome> {
               Padding(
                 padding: const EdgeInsets.only(top: kIsWeb ? 10 : 30),
                 child: Center(
-                  child: Text(
+                  child: AutoSizeText(
                     'Tutorials',
                     style: TextHD.appbarTitle,
                   ),
@@ -95,6 +116,8 @@ class _TutorialHomeState extends State<TutorialHome> {
                         const SizedBox(width: 10),
                         Expanded(
                           child: TextField(
+                            controller: searchController,
+                            onChanged: _searchTutorial,
                             cursorOpacityAnimates: true,
                             cursorColor: Colors.black,
                             keyboardType: TextInputType.text,
@@ -123,31 +146,32 @@ class _TutorialHomeState extends State<TutorialHome> {
                         .entries
                         .map(
                           (entry) => FilterButton(
-                        text: entry.value,
-                        isSelected: entry.key == _selectedIndex,
-                        onPressed: () => _selectFilter(entry.key),
-                      ),
-                    )
+                            text: entry.value,
+                            isSelected: entry.key == _selectedIndex,
+                            onPressed: () => _selectFilter(entry.key),
+                          ),
+                        )
                         .toList(),
                   ),
                 ),
               ),
               const SizedBox(height: 5),
-
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10), // Aggiunto padding qui
-                  child: ListView.builder(
-                    scrollDirection: Axis.vertical,
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: ListView.separated(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                     itemCount: filteredTutorials.length,
+                    separatorBuilder: (BuildContext context, int index) =>
+                        const SizedBox(height: 16),
                     itemBuilder: (BuildContext context, int index) {
                       final ParkourTutorial tutorial = filteredTutorials[index];
                       return ParkourTutorialCard(
-                        id: tutorial.id,
                         title: tutorial.title,
                         category: tutorial.category,
-                        livello:tutorial.livello ,
+                        livello: tutorial.livello,
                         durata: tutorial.durata,
+                        image: tutorial.image,
                       );
                     },
                   ),
@@ -188,9 +212,11 @@ class FilterButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        child: Text(
+        child: AutoSizeText(
           text,
+          maxLines: 1,
           style: TextStyle(
+            fontFamily: GoogleFonts.lato().fontFamily,
             color: isSelected ? Colors.white : Colors.black,
           ),
         ),

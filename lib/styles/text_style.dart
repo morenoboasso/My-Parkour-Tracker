@@ -11,13 +11,13 @@ class TextHD {
   );
   static TextStyle cardTitle = GoogleFonts.libreBaskerville(
     fontWeight: FontWeight.bold,
-    fontSize: 16,
+    fontSize: 18,
   );
   static TextStyle cardLivello = GoogleFonts.lato(
-    fontSize: 12,
     color: Colors.black87,
+    fontWeight: FontWeight.bold
   );
-  static TextStyle cardDurata = GoogleFonts.lato(
+  static TextStyle cardDurata = const TextStyle(
     fontSize: 12,
     color: Colors.black87,
   );
