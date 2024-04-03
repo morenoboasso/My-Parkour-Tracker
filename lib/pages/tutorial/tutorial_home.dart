@@ -165,7 +165,6 @@ class TutorialHomeState extends State<TutorialHome> {
                   ),
                 ),
               ),
-              const SizedBox(height: 5),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Container(

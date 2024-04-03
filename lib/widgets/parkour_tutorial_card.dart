@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:myparkourtracker/styles/text_style.dart';
@@ -51,16 +49,15 @@ class ParkourTutorialCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Container per l'immagine del movimento
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10), // Imposta il bordo arrotondato
-                  child: Image.asset(
-                    image,
-                    width: MediaQuery.of(context).size.width / 2.35,
-                    height: MediaQuery.of(context).size.height / 7.6,
-                    fit: BoxFit.cover,
+               ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      image,
+                      width: MediaQuery.of(context).size.width / 2.25,
+                      height: MediaQuery.of(context).size.height / 7.6,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-
                 const SizedBox(width: 5),
                 // Container per le informazioni
                 Expanded(

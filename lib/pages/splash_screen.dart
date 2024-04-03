@@ -25,8 +25,8 @@ class SplashScreen extends StatelessWidget {
                 children: [
                   Image.asset(
                     AssetsHD.logo,
-                    width: 350,
-                    height: 330,
+                    width: 400,
+                    height: 400,
                   ),
                   const SizedBox(height: 10),
                 ],
@@ -43,7 +43,7 @@ class SplashScreen extends StatelessWidget {
                 height: 50,
                 child: CircularProgressIndicator(
                   color: Colors.black26,
-                  backgroundColor: Colors.lightGreen,
+                  backgroundColor: Colors.green,
                 ),
               ),
             ),
