@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce22324c-1c29-4039-87e3-3dc5e22767c9" name="Changes" comment="Upgrade UI + minor changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/tutorials.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/tutorials.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/splash_screen.dart" afterDir="false" />
+    <list default="true" id="ce22324c-1c29-4039-87e3-3dc5e22767c9" name="Changes" comment="Add Level filter + Change background">
+      <change beforePath="$PROJECT_DIR$/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/styles/text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/text_style.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/parkour_tutorial_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/parkour_tutorial_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/search_bar.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,12 +89,21 @@
       <option name="project" value="LOCAL" />
       <updated>1711619825115</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add Level filter + Change background">
+      <option name="closed" value="true" />
+      <created>1712139649471</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712139649471</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add tutorials filter logic and little UI (da migliorare)" />
     <MESSAGE value="Upgrade UI + minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upgrade UI + minor changes" />
+    <MESSAGE value="Add Level filter + Change background" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Level filter + Change background" />
   </component>
 </project>

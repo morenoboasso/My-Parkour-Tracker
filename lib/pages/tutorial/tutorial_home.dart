@@ -120,12 +120,11 @@ class TutorialHomeState extends State<TutorialHome> {
       filteredTutorials = tutorials;
 
       filteredTutorials = tutorials.where((tutorial) {
-        final String level = tutorial.livello.toLowerCase();
         final String title = tutorial.title.toLowerCase();
         final String search = searchText.toLowerCase();
 
         // Controlla se il titolo o il livello corrispondono al testo di ricerca
-        return title.contains(search) || level.contains(search);
+        return title.contains(search);
       }).toList();
     });
   }
