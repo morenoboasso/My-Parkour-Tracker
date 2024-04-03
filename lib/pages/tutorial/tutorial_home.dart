@@ -11,10 +11,10 @@ class TutorialHome extends StatefulWidget {
   const TutorialHome({super.key});
 
   @override
-  _TutorialHomeState createState() => _TutorialHomeState();
+  TutorialHomeState createState() => TutorialHomeState();
 }
 
-class _TutorialHomeState extends State<TutorialHome> {
+class TutorialHomeState extends State<TutorialHome> {
   int _selectedIndex = -1;
   final List<String> _filters = ['Basics', 'Vaults', 'Flips', 'Tricking'];
   late List<ParkourTutorial> filteredTutorials; // Dichiarare la lista filtrata
@@ -38,9 +38,87 @@ class _TutorialHomeState extends State<TutorialHome> {
     });
   }
 
+  void _showFilterMenu(BuildContext context) async {
+    String? selectedLevel = await showMenu<String>(
+      context: context,
+      surfaceTintColor: Colors.white,
+      position: RelativeRect.fromLTRB(
+        MediaQuery.of(context).size.width,
+        kIsWeb ? 30 : 90,
+        0,
+        0,
+      ),
+      items: <PopupMenuItem<String>>[
+        const PopupMenuItem<String>(
+          value: 'Principiante',
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.star_border,size: 16,color: Colors.green,),
+              SizedBox(width: 5,),
+              Text('Principiante',style: TextStyle(color: Colors.green),),
+            ],
+          ),
+        ),
+        const PopupMenuItem<String>(
+          value: 'Intermedio',
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.star_half,size: 16,color: Colors.orange,),
+              SizedBox(width: 5,),
+              Text('Intermedio',style: TextStyle(color: Colors.orange),),
+            ],
+          ),
+        ),
+        const PopupMenuItem<String>(
+          value: 'Avanzato',
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.star,size: 16,color: Colors.red,),
+              SizedBox(width: 5,),
+              Text('Avanzato',style: TextStyle(color: Colors.red),),
+            ],
+          ),
+        ),
+      ],
+      elevation: 1.0,
+    );
+
+    if (selectedLevel != null) {
+      // Azzerare i filtri prima di applicare il nuovo filtro
+      _selectedIndex = -1;
+      filteredTutorials = tutorials;
+      _filterByLevel(selectedLevel);
+    }
+  }
+
+
+
+
+  void _filterByLevel(String selectedLevel) {
+    setState(() {
+      if (selectedLevel == 'Principiante' ||
+          selectedLevel == 'Intermedio' ||
+          selectedLevel == 'Avanzato') {
+        filteredTutorials = tutorials
+            .where((tutorial) => tutorial.livello.toLowerCase() == selectedLevel.toLowerCase())
+            .toList();
+      } else {
+        // Se viene selezionata un'altra opzione, mostra tutti i tutorial
+        filteredTutorials = tutorials;
+      }
+    });
+  }
+
   void _searchTutorial(String searchText) {
     //controllo ricerca
     setState(() {
+      // Azzerare i filtri prima di eseguire la ricerca
+      _selectedIndex = -1;
+      filteredTutorials = tutorials;
+
       filteredTutorials = tutorials.where((tutorial) {
         final String level = tutorial.livello.toLowerCase();
         final String title = tutorial.title.toLowerCase();
@@ -127,6 +205,15 @@ class _TutorialHomeState extends State<TutorialHome> {
                               hintText: 'Cerca skills da imparare..',
                               border: InputBorder.none,
                             ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            _showFilterMenu(context);
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Icon(Icons.filter_list, color: Colors.black),
                           ),
                         ),
                       ],

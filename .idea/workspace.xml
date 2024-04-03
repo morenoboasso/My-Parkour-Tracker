@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ce22324c-1c29-4039-87e3-3dc5e22767c9" name="Changes" comment="Upgrade UI + minor changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Background.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/tutorials.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/tutorials.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/splash_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/styles/text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/text_style.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/parkour_tutorial_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/parkour_tutorial_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/search_bar.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
