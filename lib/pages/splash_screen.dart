@@ -50,16 +50,12 @@ class SplashScreen extends StatelessWidget {
           ),
         ],
       ),
-
     );
-
   }
 
-  void _navigateToNextScreen()  {
-
-        Future.delayed(const Duration(seconds: 3), () {
-          Get.offAllNamed('/tutorial_home');
-        });
-      }
-
+  void _navigateToNextScreen() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.offAllNamed('/tutorial_home');
+    });
+  }
 }
