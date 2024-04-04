@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:myparkourtracker/styles/text_style.dart';
 import '../../data/tutorials.dart';
 import '../../styles/assets_manager.dart';
@@ -54,9 +55,18 @@ class TutorialHomeState extends State<TutorialHome> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.star_border,size: 16,color: Colors.green,),
-              SizedBox(width: 5,),
-              Text('Principiante',style: TextStyle(color: Colors.green),),
+              Icon(
+                Icons.star_border,
+                size: 16,
+                color: Colors.green,
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Text(
+                'Principiante',
+                style: TextStyle(color: Colors.green),
+              ),
             ],
           ),
         ),
@@ -65,9 +75,18 @@ class TutorialHomeState extends State<TutorialHome> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.star_half,size: 16,color: Colors.orange,),
-              SizedBox(width: 5,),
-              Text('Intermedio',style: TextStyle(color: Colors.orange),),
+              Icon(
+                Icons.star_half,
+                size: 16,
+                color: Colors.orange,
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Text(
+                'Intermedio',
+                style: TextStyle(color: Colors.orange),
+              ),
             ],
           ),
         ),
@@ -76,9 +95,18 @@ class TutorialHomeState extends State<TutorialHome> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.star,size: 16,color: Colors.red,),
-              SizedBox(width: 5,),
-              Text('Avanzato',style: TextStyle(color: Colors.red),),
+              Icon(
+                Icons.star,
+                size: 16,
+                color: Colors.red,
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Text(
+                'Avanzato',
+                style: TextStyle(color: Colors.red),
+              ),
             ],
           ),
         ),
@@ -94,16 +122,14 @@ class TutorialHomeState extends State<TutorialHome> {
     }
   }
 
-
-
-
   void _filterByLevel(String selectedLevel) {
     setState(() {
       if (selectedLevel == 'Principiante' ||
           selectedLevel == 'Intermedio' ||
           selectedLevel == 'Avanzato') {
         filteredTutorials = tutorials
-            .where((tutorial) => tutorial.livello.toLowerCase() == selectedLevel.toLowerCase())
+            .where((tutorial) =>
+                tutorial.livello.toLowerCase() == selectedLevel.toLowerCase())
             .toList();
       } else {
         // Se viene selezionata un'altra opzione, mostra tutti i tutorial
@@ -166,7 +192,7 @@ class TutorialHomeState extends State<TutorialHome> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: Container(
                   decoration: BoxDecoration(
                     boxShadow: [
@@ -211,7 +237,8 @@ class TutorialHomeState extends State<TutorialHome> {
                           },
                           child: const Padding(
                             padding: EdgeInsets.only(right: 10),
-                            child: Icon(Icons.filter_list, color: Colors.black),
+                            child: Icon(Icons.filter_alt_outlined,
+                                color: Colors.black),
                           ),
                         ),
                       ],
@@ -243,12 +270,34 @@ class TutorialHomeState extends State<TutorialHome> {
               const SizedBox(height: 5),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: ListView.separated(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: filteredTutorials.isEmpty
+                      ?  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 40), // Aggiunta del padding top
+                      Text(
+                        '⚠  Nessuna skill trovata  ⚠',
+                        style: TextHD.noResultTitle,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        "Prova a cercare usando parole chiave diverse o controlla di aver digitato correttamente.",
+                        textAlign: TextAlign.center,
+                        style: TextHD.noResult,
+                      ),
+                      const SizedBox(height: 10),
+                      Image.asset(
+                        AssetsHD.noResult,
+                        width: 100,
+                      ),
+                    ],
+                  )
+                      : ListView.separated(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     itemCount: filteredTutorials.length,
                     separatorBuilder: (BuildContext context, int index) =>
-                        const SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     itemBuilder: (BuildContext context, int index) {
                       final ParkourTutorial tutorial = filteredTutorials[index];
                       return ParkourTutorialCard(
@@ -257,14 +306,61 @@ class TutorialHomeState extends State<TutorialHome> {
                         livello: tutorial.livello,
                         durata: tutorial.durata,
                         image: tutorial.image,
+                        link: tutorial.link,
                       );
                     },
                   ),
                 ),
               ),
+
             ],
           ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(color: Colors.black.withOpacity(0.3), width: 1.5),
+          ),
+          color: Colors.white,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+          child: GNav(
+            selectedIndex: 1,
+            tabBorderRadius: 30,
+            gap: 8,
+            backgroundColor: Colors.white70,
+            tabBackgroundColor: Colors.grey.withOpacity(0.2),
+            padding: const EdgeInsets.all(6),
+            tabs: const [
+              GButton(
+                icon: Icons.place,
+                iconSize: 25,
+                text: 'Spots',
+                textSize: 14,
+              ),
+              GButton(
+                icon: Icons.school,
+                iconSize: 25,
+                text: 'Tutorials',
+                textSize: 14,
+              ),
+              GButton(
+                icon: Icons.directions_walk,
+                iconSize: 25,
+                text: 'Riscaldamento',
+                textSize: 14,
+              ),
+              GButton(
+                icon: Icons.show_chart,
+                iconSize: 25,
+                text: 'Dashboard',
+                textSize: 14,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

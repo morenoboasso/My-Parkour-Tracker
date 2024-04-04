@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:get/get.dart';
 import 'package:myparkourtracker/styles/text_style.dart';
+
+import '../pages/tutorial/tutorial_page.dart';
 
 class ParkourTutorialCard extends StatelessWidget {
   final String title;
@@ -8,6 +11,7 @@ class ParkourTutorialCard extends StatelessWidget {
   final String livello;
   final int durata;
   final String image;
+  final String link;
 
   const ParkourTutorialCard({
     super.key,
@@ -16,6 +20,7 @@ class ParkourTutorialCard extends StatelessWidget {
     required this.livello,
     required this.durata,
     required this.image,
+    required this.link,
   });
 
   @override
@@ -49,15 +54,15 @@ class ParkourTutorialCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Container per l'immagine del movimento
-               ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      image,
-                      width: MediaQuery.of(context).size.width / 2.25,
-                      height: MediaQuery.of(context).size.height / 7.6,
-                      fit: BoxFit.fill,
-                    ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    image,
+                    width: MediaQuery.of(context).size.width / 2.25,
+                    height: MediaQuery.of(context).size.height / 7.6,
+                    fit: BoxFit.fill,
                   ),
+                ),
                 const SizedBox(width: 5),
                 // Container per le informazioni
                 Expanded(
@@ -133,7 +138,13 @@ class ParkourTutorialCard extends StatelessWidget {
               ],
             ),
             onTap: () {
-              // Azioni da eseguire quando si tocca la card
+              Get.to(
+                () => TutorialPage(
+                  tutorialTitle: title,
+                  tutorialLink: link,
+                ),
+                arguments: [title, link],
+              );
             },
           ),
           const SizedBox(width: 10),

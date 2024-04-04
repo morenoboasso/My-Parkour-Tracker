@@ -22,4 +22,17 @@ class TextHD {
     fontSize: 12,
     color: Colors.black87,
   );
+  static TextStyle tutorialDescr = GoogleFonts.lato(
+    fontSize: 14,
+    color: Colors.black,
+  );
+  static TextStyle noResult = GoogleFonts.lato(
+    fontSize: 16,
+    color: Colors.black,
+  );
+  static TextStyle noResultTitle = GoogleFonts.lato(
+    fontSize: 20,
+    color: Colors.black,
+    fontWeight: FontWeight.bold
+  );
 }
