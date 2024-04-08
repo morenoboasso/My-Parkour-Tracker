@@ -286,11 +286,6 @@ class TutorialHomeState extends State<TutorialHome> {
                         textAlign: TextAlign.center,
                         style: TextHD.noResult,
                       ),
-                      const SizedBox(height: 10),
-                      Image.asset(
-                        AssetsHD.noResult,
-                        width: 100,
-                      ),
                     ],
                   )
                       : ListView.separated(

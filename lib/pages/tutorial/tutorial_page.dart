@@ -20,6 +20,7 @@ class TutorialPage extends StatefulWidget {
 
 class _TutorialPageState extends State<TutorialPage> {
   late YoutubePlayerController _controller;
+  IconData? _selectedIcon;
 
   @override
   void initState() {
@@ -42,9 +43,7 @@ class _TutorialPageState extends State<TutorialPage> {
     return WillPopScope(
       onWillPop: () async {
         if (!isPortrait) {
-          // Se siamo in modalità landscape, cambia l'orientamento a portrait
           await _changeScreenOrientation(context, Orientation.portrait);
-          // Impedisce di uscire dalla schermata
           return Future.value(false);
         }
         return Future.value(true);
@@ -66,9 +65,10 @@ class _TutorialPageState extends State<TutorialPage> {
             ),
             Column(
               children: [
-                if (isPortrait) // Mostra solo il titolo in modalità portrait
+                if (isPortrait)
                   Padding(
-                    padding: const EdgeInsets.only(top: kIsWeb ? 10 : 30,left: 10,right: 10),
+                    padding: const EdgeInsets.only(
+                        top: kIsWeb ? 10 : 30, left: 10, right: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -86,70 +86,141 @@ class _TutorialPageState extends State<TutorialPage> {
                           style: TextHD.appbarTitle,
                         ),
                         GestureDetector(
-                          onTap: () {
-                          },
+                          onTap: () {},
                           child: const Icon(
                             Icons.share,
                             color: Colors.black,
                           ),
                         ),
-
                       ],
                     ),
                   ),
-                if (isPortrait) const SizedBox(height: 5), // verticale
+                if (isPortrait) const SizedBox(height: 5),
                 Flexible(
                   child: isPortrait
                       ? Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.4),
-                                spreadRadius: 3,
-                                blurRadius: 7,
-                                offset: const Offset(0, 4),
-                              ),
-                            ],
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(5.0),
-                            child: YoutubePlayer(
-                              controller: _controller,
-                              showVideoProgressIndicator: true,
-                              progressColors: const ProgressBarColors(
-                                backgroundColor: Colors.white54,
-                                playedColor: Colors.green,
-                                bufferedColor: Colors.white,
-                                handleColor: Colors.green,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.4),
+                                      spreadRadius: 3,
+                                      blurRadius: 7,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ],
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: YoutubePlayer(
+                                    controller: _controller,
+                                    showVideoProgressIndicator: true,
+                                    progressColors: const ProgressBarColors(
+                                      backgroundColor: Colors.white54,
+                                      playedColor: Colors.green,
+                                      bufferedColor: Colors.white,
+                                      handleColor: Colors.green,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
+                            const SizedBox(height: 24),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                height: 100,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.2),
+                                      spreadRadius: 2,
+                                      blurRadius: 4,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    _buildIconWithText(
+                                      Icons.menu_book,
+                                      "Da imparare",
+                                      _selectedIcon == Icons.menu_book
+                                          ? Colors.blue
+                                          : Colors.grey[600],
+                                      () {
+                                        _onIconSelected(Icons.menu_book);
+                                      },
+                                    ),
+                                    _buildIconWithText(
+                                      Icons.check,
+                                      "Completato",
+                                      _selectedIcon == Icons.check
+                                          ? Colors.green
+                                          : Colors.grey[600],
+                                      () {
+                                        _onIconSelected(Icons.check);
+                                      },
+                                    ),
+                                    _buildIconWithText(
+                                      Icons.emoji_events,
+                                      "Perfezionato",
+                                      _selectedIcon == Icons.emoji_events
+                                          ? Colors.orange
+                                          : Colors.grey[600],
+                                      () {
+                                        _onIconSelected(Icons.emoji_events);
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 24),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.2),
+                                        spreadRadius: 2,
+                                        blurRadius: 4,
+                                        offset: const Offset(0, 4),
+                                      ),
+                                    ],
+                                  ),
+
+                                  // Inserisci qui il contenuto del tuo terzo container
+
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      : YoutubePlayer(
+                          controller: _controller,
+                          showVideoProgressIndicator: true,
+                          progressColors: const ProgressBarColors(
+                            backgroundColor: Colors.white54,
+                            playedColor: Colors.green,
+                            bufferedColor: Colors.white,
+                            handleColor: Colors.green,
                           ),
                         ),
-                      ), // verticale
-                      const SizedBox(height: 24), // Spazio tra il video e il completato o no
-
-                    ],
-                  )
-                      : YoutubePlayer(
-                    controller: _controller,
-                    showVideoProgressIndicator: true,
-                    progressColors: const ProgressBarColors(
-                      backgroundColor: Colors.white54,
-                      playedColor: Colors.green,
-                      bufferedColor: Colors.white,
-                      handleColor: Colors.green,
-                    ),
-                  ), // orizzontale
                 ),
-
-
-
-
               ],
             ),
           ],
@@ -158,7 +229,6 @@ class _TutorialPageState extends State<TutorialPage> {
     );
   }
 
-  //se sono full screen e clicco indietro , mi toglie il fullscreen , sennò se sono verticale esce dala schermata
   Future<void> _changeScreenOrientation(
       BuildContext context, Orientation orientation) async {
     if (orientation == Orientation.landscape) {
@@ -176,5 +246,61 @@ class _TutorialPageState extends State<TutorialPage> {
   void dispose() {
     _controller.dispose();
     super.dispose();
+  }
+
+  void _onIconSelected(IconData icon) {
+    setState(() {
+      if (_selectedIcon == icon) {
+        _selectedIcon = null; // Deseleziona l'icona se è già selezionata
+      } else {
+        _selectedIcon = icon; // Seleziona l'icona cliccata
+      }
+    });
+    //debug
+    final iconTextMap = {
+      Icons.menu_book: "Da imparare",
+      Icons.check: "Completato",
+      Icons.emoji_events: "Perfezionato",
+    };
+    String? iconName =
+        _selectedIcon != null ? iconTextMap[_selectedIcon] : null;
+    iconName ??= "Nessuno selezionato";
+    debugPrint("Icona selezionata: $iconName");
+  }
+
+  Widget _buildIconWithText(
+    IconData icon,
+    String text,
+    Color? iconColor,
+    Function() onPressed,
+  ) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: iconColor!,
+                width: 2.5,
+              ),
+            ),
+            padding: const EdgeInsets.all(8),
+            child: Icon(
+              icon,
+              size: 32,
+              color: iconColor,
+            ),
+          ),
+          const SizedBox(height: 5),
+          Text(
+            text,
+            style: TextHD.tutorialCompleted.copyWith(color: iconColor),
+          ),
+        ],
+      ),
+    );
   }
 }

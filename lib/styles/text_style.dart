@@ -35,4 +35,9 @@ class TextHD {
     color: Colors.black,
     fontWeight: FontWeight.bold
   );
+  static TextStyle tutorialCompleted = GoogleFonts.lato(
+    fontSize: 13,
+    fontWeight: FontWeight.bold,
+    color: Colors.grey[600],
+  );
 }

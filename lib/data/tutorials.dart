@@ -31,7 +31,7 @@ final List<ParkourTutorial> tutorials = [
     livello: 'Principiante',
     durata: 5,
     image: 'assets/speed_vault.webp',
-    link: 'https://www.youtube.com/watch?v=video_id1',
+    link: 'https://www.youtube.com/watch?v=iENtDEeocLQ',
   ),
   ParkourTutorial(
     title: 'Wall Run',
