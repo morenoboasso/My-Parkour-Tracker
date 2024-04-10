@@ -272,42 +272,49 @@ class TutorialHomeState extends State<TutorialHome> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: filteredTutorials.isEmpty
-                      ?  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const SizedBox(height: 40), // Aggiunta del padding top
-                      Text(
-                        '⚠  Nessuna skill trovata  ⚠',
-                        style: TextHD.noResultTitle,
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        "Prova a cercare usando parole chiave diverse o controlla di aver digitato correttamente.",
-                        textAlign: TextAlign.center,
-                        style: TextHD.noResult,
-                      ),
-                    ],
-                  )
+                      ? Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                                height: 40), // Aggiunta del padding top
+                            Text(
+                              '⚠  Nessuna skill trovata  ⚠',
+                              style: TextHD.noResultTitle,
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              "Prova a cercare usando parole chiave diverse o controlla di aver digitato correttamente.",
+                              textAlign: TextAlign.center,
+                              style: TextHD.noResult,
+                            ),
+                          ],
+                        )
                       : ListView.separated(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    itemCount: filteredTutorials.length,
-                    separatorBuilder: (BuildContext context, int index) =>
-                    const SizedBox(height: 16),
-                    itemBuilder: (BuildContext context, int index) {
-                      final ParkourTutorial tutorial = filteredTutorials[index];
-                      return ParkourTutorialCard(
-                        title: tutorial.title,
-                        category: tutorial.category,
-                        livello: tutorial.livello,
-                        durata: tutorial.durata,
-                        image: tutorial.image,
-                        link: tutorial.link,
-                      );
-                    },
-                  ),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          itemCount: filteredTutorials.length,
+                          separatorBuilder: (BuildContext context, int index) =>
+                              const SizedBox(height: 16),
+                          itemBuilder: (BuildContext context, int index) {
+                            final ParkourTutorial tutorial =
+                                filteredTutorials[index];
+                            return ParkourTutorialCard(
+                              title: tutorial.title,
+                              category: tutorial.category,
+                              livello: tutorial.livello,
+                              durata: tutorial.durata,
+                              image: tutorial.image,
+                              link: tutorial.link,
+                              riscaldamento1: tutorial.riscaldamento1,
+                              riscaldamento3: tutorial.riscaldamento3,
+                              riscaldamento2: tutorial.riscaldamento2,
+                              imgRis1: tutorial.imgRis1,
+                              imgRis2: tutorial.imgRis2,
+                              imgRis3: tutorial.imgRis3,
+                            );
+                          },
+                        ),
                 ),
               ),
-
             ],
           ),
         ],

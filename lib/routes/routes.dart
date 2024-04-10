@@ -16,7 +16,7 @@ class AppPages {
     ),
     GetPage(
       name: '/tutorial_page',
-      page: () => const TutorialPage(tutorialTitle: '', tutorialLink: '',),
+      page: () => const TutorialPage(tutorialTitle: '', tutorialLink: '', riscaldamento1: '', riscaldamento3: '', riscaldamento2: '', imgRis1: '', imgRis2: '', imgRis3: '',),
     ),
   ];
 }

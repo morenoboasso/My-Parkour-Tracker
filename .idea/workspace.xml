@@ -5,16 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce22324c-1c29-4039-87e3-3dc5e22767c9" name="Changes" comment="Minor Changes">
-      <change beforePath="$PROJECT_DIR$/.idea/My-Parkour-Tracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/My-Parkour-Tracker.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/backflip_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/bilanciamento.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/braccia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/busto1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/busto2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/busto3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/calcio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/corsa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/flessioni.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/gambe1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/gambe2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/gambe3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/ruota.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/salto.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/squat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/wall.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/noresult.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/tutorials.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/tutorials.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/tutorial/tutorial_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/routes.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/styles/assets_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/assets_manager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/styles/text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/text_style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/parkour_tutorial_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/parkour_tutorial_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +70,13 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/lib/assets" />

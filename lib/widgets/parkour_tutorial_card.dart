@@ -12,6 +12,13 @@ class ParkourTutorialCard extends StatelessWidget {
   final int durata;
   final String image;
   final String link;
+  final String riscaldamento1;
+  final String riscaldamento2;
+  final String riscaldamento3;
+  final String imgRis1;
+  final String imgRis2;
+  final String imgRis3;
+
 
   const ParkourTutorialCard({
     super.key,
@@ -21,6 +28,13 @@ class ParkourTutorialCard extends StatelessWidget {
     required this.durata,
     required this.image,
     required this.link,
+    required this.riscaldamento1,
+    required this.riscaldamento2,
+    required this.riscaldamento3,
+    required this.imgRis1,
+    required this.imgRis2,
+    required this.imgRis3,
+
   });
 
   @override
@@ -142,6 +156,13 @@ class ParkourTutorialCard extends StatelessWidget {
                 () => TutorialPage(
                   tutorialTitle: title,
                   tutorialLink: link,
+                  riscaldamento1: riscaldamento1,
+                  riscaldamento2: riscaldamento2,
+                  riscaldamento3: riscaldamento3,
+                  imgRis1: imgRis1,
+                  imgRis2: imgRis2,
+                  imgRis3: imgRis3,
+
                 ),
                 arguments: [title, link],
               );
